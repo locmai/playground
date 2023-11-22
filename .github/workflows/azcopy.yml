@@ -14,6 +14,6 @@ jobs:
     - uses: workflow/nix-shell-action@v3
       with:
         packages: azcopy
-      script: |
+        script: |
           azcopy --version
 # - run: azcopy_v10 --source {SOURCE} --destination {DEST} --dest-key ${{ secrets.STORAGE_KEY }} --recursive --set-content-type
