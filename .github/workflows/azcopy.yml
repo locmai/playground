@@ -1,0 +1,19 @@
+name: test azcopy
+
+on:
+  workflow_dispatch:
+
+jobs:
+  azcopy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: cachix/install-nix-action@v18
+      with:
+        nix_path: nixpks=channel:nixos-unstable
+    - uses: workflow/nix-shell-action@v3
+      with:
+        packages: azcopy
+      script: |
+          azcopy --version
+# - run: azcopy_v10 --source {SOURCE} --destination {DEST} --dest-key ${{ secrets.STORAGE_KEY }} --recursive --set-content-type
