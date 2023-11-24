@@ -1,2 +1,2 @@
-test:
-	act -j test
+kubernetes:
+	colima start --kubernetes
