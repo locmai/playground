@@ -1,8 +1,9 @@
 image:
-  tag: "10.0.9"
+  tag: "10.1.2"
 grafana.ini:
   feature_toggles:
     nestedFolders: true
+    nestedFolderPicker: true
 extraContainers: |
   - name: git-sync
     image: registry.k8s.io/git-sync/git-sync:v4.1.0
@@ -24,8 +25,7 @@ dashboardProviders:
    providers:
    - name: next-gen
      orgId: 1
-     folder: 'Next-generation'
-     folderUid: 'next-gen'
+     folder: 'next-gen' 
      type: file
      disabledDeletion: true
      allowUiUpdates: false
